@@ -1,0 +1,85 @@
+<div class="card">
+    <div class="card-body pb-0">
+        <br>
+        <br>
+        <h3 style="text-align: center;">Employee Timesheet</h3>
+        <br><br>
+        <div class ="col-md-12">
+                <div class="inputs col-md-4 parent-header">
+                    <div class="col-md-6 parent-body">Projet</div><input class="col-md-6 parent-body" type="text" style="width:30%" value="HRMS"/>
+                </div>
+                <div class="inputs col-md-4 parent-header">
+                    <div class="col-md-6 parent-body"> Month </div> <input class="col-md-6 parent-body" type="text" style="width:30%" value="Oct 2020"/>
+                </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-12 col-md-12">
+                <div class="card">
+                    <div class="card-body position-relative">
+                        <div class="table-responsive cnstr-record product-tbl">
+                            <table class="table table-bordered heading-hvr">
+                                <thead>
+                                    <tr>
+                                        <th> </th>
+                                        <th > Date </th>
+                                        <th> Start Time </th>
+                                        <th> Break </th>
+                                        <th> End Time </th>
+                                        <th> Total (Hours) </th>
+                                    </tr>
+                                </thead>
+                                <tbody *ngFor="let timesheet of timesheets; let i = index">
+                                    <tr>
+                                        <td align="center">
+                                            <a class="expand-row" *ngIf="!hideme[i]" 
+                                            (click)="showTimeSheetDetailsInfo(i,timesheet.EntryId)"
+                                            >
+                                                <i class="fa fa-table"></i>
+                                            </a>  
+                                            <a class="expand-row" *ngIf="hideme[i]" (click)="hideme[i] = !hideme[i]">
+                                                <i class="fa fa-plus" ></i>
+                                            </a>
+                                        </td>
+                                        <td align="center"> {{timesheet.Date}} </td>
+                                        <td> {{timesheet.StartTime}} </td>
+                                        <td> {{timesheet.Break }} </td>
+                                        <td> {{timesheet.EndTime}} </td>
+                                        <td> {{timesheet.Total}} </td>
+                                    </tr>
+                                    <!-- <div id="myresult" class="img-zoom-result"></div> -->
+                                    <tr [hidden]="!hideme[i]" class="sub-table no-bg">
+                                        <td align="center"> </td>
+                                        <td colspan="15" class="p-0">
+                                            <table class="table mb-0">
+                                                <thead class="bg-dark text-white">
+                                                    <tr>
+                                                        <th>Type</th>
+                                                        <th> Start Time </th>
+                                                        <th> Break </th>
+                                                        <th> End Time </th>
+                                                        <th> Total (Hours) </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let timesheetdetail of TimeSheetDeatailsInfo">
+                                                        <td>{{timesheetdetail.Type}}</td>
+                                                        <td>{{timesheetdetail.StartTime}}</td>
+                                                        <td>{{timesheetdetail.Break}}</td>
+                                                        <td>{{timesheetdetail.EndTime}}</td>
+                                                        <td>{{timesheetdetail.Total}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

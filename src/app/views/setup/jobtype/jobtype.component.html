@@ -1,0 +1,46 @@
+<div class="animated fadeIn">
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-align-justify"></i>Job Types
+            <div class="card-header-actions">
+               <!-- <div class='icon-plus'></div> -->
+               <button type="button" class="btn btn-brand btn-sm btn-html5 mr-1" style="margin-bottom: 4px">
+                <i class="icon-plus"></i>
+                <span>Add</span>
+              </button>
+            </div>
+        </div>
+            <div class="card-body">
+                <table class='table table-bordered table-sm table-hover table-align-middle mb-0'>
+                    <thead>
+                        <tr>
+                            <!-- <th>Id</th> -->
+                            <th>Job Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        <tr *ngFor='let jt of jobType'>
+                            <!-- <td>{{ jt.jobTypeId }} </td> -->
+                            <td>{{ jt.jobTypeName }}</td>
+                            <td>{{ jt.description }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <nav>
+                    <ul class="pagination">
+                      <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                      <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">4</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                  </nav>
+            </div>
+    </div>
+</div>

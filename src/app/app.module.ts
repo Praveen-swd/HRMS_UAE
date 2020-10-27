@@ -40,6 +40,8 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
+import { MasterModule } from './views/master/master.module';
+import { SetupModule } from './views/setup/setup.module';
 
 @NgModule({
   imports: [
@@ -54,7 +56,9 @@ import { ChartsModule } from 'ng2-charts';
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    MasterModule,
+    SetupModule
   ],
   declarations: [
     AppComponent,

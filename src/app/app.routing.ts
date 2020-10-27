@@ -71,6 +71,14 @@ export const routes: Routes = [
         loadChildren: () => import('./views/icons/icons.module').then(m => m.IconsModule)
       },
       {
+        path: 'master',
+        loadChildren: () => import('./views/master/master.module').then(m => m.MasterModule)
+      },
+      {
+        path: 'setup',
+        loadChildren: () => import('./views/setup/setup.module').then(m => m.SetupModule)
+      },
+      {
         path: 'notifications',
         loadChildren: () => import('./views/notifications/notifications.module').then(m => m.NotificationsModule)
       },
